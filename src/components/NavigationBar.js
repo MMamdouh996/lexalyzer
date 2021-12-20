@@ -6,7 +6,6 @@ class NavigationBar extends React.Component {
 
     constructor(props) {
         super(props);
-        this.switchCallback = props.switchCallback;
         this.state = {
 
         }
@@ -14,14 +13,14 @@ class NavigationBar extends React.Component {
     render() {
 
         return <div className="navigation-bar">
-            <div className="navigation-button active">
-                <Braces className="navigation-button-icon" size={25}/>
+            <div className={this.props.activeTab == 'tokens' ? "navigation-button active" : "navigation-button"} onClick={() => this.props.switchCallback('tokens')}>
+                <Braces className="navigation-button-icon" size={25} />
             </div>
-            <div className="navigation-button">
-                <Table className="navigation-button-icon" size={25}/>
+            <div className={this.props.activeTab == 'symbol-table' ? "navigation-button active" : "navigation-button"} onClick={() => this.props.switchCallback('symbol-table')}>
+                <Table className="navigation-button-icon" size={25} />
             </div>
-            <div className="navigation-button">
-                <ExclamationCircle className="navigation-button-icon" size={25}/>
+            <div className={this.props.activeTab == 'errors' ? "navigation-button active" : "navigation-button"} onClick={() => this.props.switchCallback('errors')}>
+                <ExclamationCircle className="navigation-button-icon" size={25} />
             </div>
         </div>
     }

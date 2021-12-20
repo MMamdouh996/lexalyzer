@@ -1,0 +1,29 @@
+.code-editor{
+    width: 100%;
+    display: flex;
+    background-color: #e2e2e2fe;
+
+}
+.code-editor *{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12pt;
+}
+.code-editor textarea{
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+    border-style: none; 
+    border-color: Transparent; 
+    overflow: auto;    
+}
+
+.code-editor textarea:focus{
+    outline: 0;
+}
+
+.line-number{
+    width: 50px;
+    text-align: left;
+}
