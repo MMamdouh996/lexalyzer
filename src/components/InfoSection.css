@@ -1,0 +1,32 @@
+.info-section {
+    display: flex;
+}
+
+.navigation-bar{
+    display: block;
+    background-color: #f0f0f0;
+    height: 100%;
+
+}
+.navigation-button {
+    padding: 10px;
+    padding-left: 5px;
+    color: black;
+    margin: 0;
+    transition: opacity 200ms;
+
+    border-left: 5px solid transparent;
+    border-left-color: transparent;
+}
+.navigation-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.navigation-button.active{
+    border-left-color: #2d75fc;
+
+    color: #2d75fc;
+}
+
+
