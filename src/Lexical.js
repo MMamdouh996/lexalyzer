@@ -27,7 +27,6 @@ class Production {
      */
     matches(str) {
         var match = this.pattern.exec(str);
-        console.log(match)
         if (match?.length > 0 && match.index === 0) {
             return match[0];
         }
@@ -58,13 +57,13 @@ class LexicalAnalyzer {
      * @param {String} source 
      * @param {Production[]} productions 
      */
-    constructor(source, productions) {
+    constructor(source, productions, symbolTable = {}) {
         this.index = 0;
         this.length = source.length;
         this.source = source;
         this.productions = productions;
         // symbol table initialized with super values
-        this.symbolTable = {};
+        this.symbolTable = symbolTable;
 
     }
     putSymbol(charSequence, production, info) {
@@ -81,9 +80,7 @@ class LexicalAnalyzer {
         let occurrenceIndex = this.index;
         // evaluation
         let candidate, candidateLength = 0;
-        let subSource = this.source.substring(this.index);
-        const evaluation = this.productions.map(p => { return { production: p, match: p.matches(subSource) } }); // map every production to the length of its match
-        console.log(evaluation);
+        const evaluation = this.productions.map(p => { return { production: p, match: p.matches(this.source.substring(this.index)) } }); // map every production to the length of its match
         evaluation.forEach((c) => { // linear search best candidate production
             if (c.match?.length > candidateLength) {
                 candidateLength = c.match.length;
@@ -102,3 +99,6 @@ class LexicalAnalyzer {
     }
 }
 
+export {
+    Token, Production, LexicalAnalyzer
+};

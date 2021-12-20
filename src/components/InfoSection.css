@@ -1,10 +1,13 @@
 .info-section {
     display: flex;
+    background-color: #f0f0f0;
+    border-right: 1px solid #9e9e9e;
+
+
 }
 
 .navigation-bar{
     display: block;
-    background-color: #f0f0f0;
     height: 100%;
     border-right: 1px solid #9e9e9e;
 
@@ -18,6 +21,8 @@
 
     border-left: 2px solid transparent;
     border-left-color: transparent;
+    position: relative;
+
 }
 .navigation-button:hover {
     cursor: pointer;
@@ -30,4 +35,37 @@
     color: #2d75fc;
 }
 
+.info-section .record{
+    align-items: center;
+    border:0;
+}
+.info-section .record:hover{
+    background-color:  #dadada;
+    user-select: none;
+}
 
+
+.navigation-button .count-bubble{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    color: white;
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+.navigation-button .count-bubble.primary{
+    background-color: #2d75fc;
+}
+
+.navigation-button .count-bubble.danger{
+    background-color: tomato;
+}
+
+.p-relative{
+    position: relative;
+}
