@@ -1,0 +1,145 @@
+.info-section {
+    display: flex;
+    background-color: var(--color-shade-1);
+}
+
+.navigation-bar {
+    padding: 15px;
+    display: block;
+    background-color: var(--color-shade-2);
+    position: relative;
+
+}
+
+.navigation-button {
+    padding: 13px;
+    color: black;
+    margin: 0;
+    transition: opacity 200ms;
+    align-items: center;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.navigation-button svg {
+    z-index: 1;
+}
+
+.navigation-button::before {
+    content: "";
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    background-color: rgba(0, 0, 0, 0.109);
+    border-radius: 1rem;
+
+    transition: border-radius 200ms;
+    z-index: 0;
+}
+
+.navigation-button:not(.active):hover:before {
+    border-radius: 0.5rem;
+
+}
+
+.navigation-button.active::before {
+    background-color: var(--color-primary);
+}
+
+.navigation-button.active {
+    color: var(--color-shade-0);
+}
+
+.navigation-button .count-bubble {
+    z-index: 10;
+}
+
+.navigation-button .count-bubble.primary {
+    background-color: var(--color-primary);
+}
+
+.navigation-button .count-bubble.danger {
+    background-color: tomato;
+}
+
+.navigation-button.active .count-bubble {
+    background-color: var(--color-shade-0);
+    color: var(--color-primary);
+}
+
+.record {
+    align-items: center;
+    border: 0;
+    user-select: none;
+    width: 100%;
+    position: relative;
+}
+
+.record:hover {
+    background-color: var(--color-shade-2);
+}
+
+.record .record-tooltip {
+    padding: 0.5rem;
+    position: absolute;
+    z-index: 100;
+    display: none;
+    left: 0;
+    top: 100%;
+    background-color: #ffffff85;
+}
+
+.record:hover .record-tooltip {
+    display: block;
+}
+
+.info-section .header {
+    padding: 0.5rem;
+    font-family: monospace;
+    text-transform: uppercase;
+    user-select: none;
+    font-weight: lighter;
+}
+
+.navigation-button .count-bubble {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    color: var(--color-shade-0);
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+
+
+.resize-border {
+    transition: opacity 200ms;
+    background-color: var(--color-primary);
+    opacity: 0;
+
+    cursor: w-resize;
+}
+
+.resize-handle {
+    width: 5px;
+    outline: 10px solid transparent;
+}
+
+
+.resize-border:hover {
+    content: "";
+    opacity: 0.5;
+
+
+}
+
+.p-relative {
+    position: relative;
+}

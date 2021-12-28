@@ -1,0 +1,28 @@
+/**
+* This is a block comment that
+* can
+* spread
+* across multiple lines and still skipped by the analyzer
+*/
+
+// this is a line comment
+const threshold = 2.356;
+let x = Math.random() * 3;
+if( x < threshold){
+	console.log('Hello World!');
+}
+/**
+* this is another block comment
+*/
+else if(x >= threshold){
+	for(let i = 0; i < 10; i++){
+		console.log("what a wonderful day!");
+	}
+}
+
+
+//this is just to generate an error of not closed '('
+function error( /*)*/
+{
+	
+}

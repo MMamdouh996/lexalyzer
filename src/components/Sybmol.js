@@ -11,7 +11,7 @@ class Symbol extends React.Component {
             <tr className="record">
                 <td style={{ width: '30px', textAlign: "center", alignItems: 'center' }}>{this.props.index}</td>
                 <td style={{ width: '100px', maxWidth: '100px', overflow: 'hidden', textOverflow: 'ellipsis' }}>{this.props.type}</td>
-                <td style={{ width: '100px', maxWidth: '100px', overflow: 'hidden', textOverflow: 'ellipsis' }}>{this.props.charSequence}</td>
+                <td style={{ maxWidth: '100px', overflow: 'hidden', textOverflow: 'ellipsis' }}>{this.props.charSequence}</td>
             </tr>
         );
     }

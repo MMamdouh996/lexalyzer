@@ -1,5 +1,22 @@
 .App {
     display: flex;
     height: 100%;
+    position: relative;
 }
 
+
+*::-webkit-scrollbar-track
+{
+	background-color: #ffffff7f;
+}
+
+*::-webkit-scrollbar
+{
+	width: 6px;
+	background-color:  var(--color-shade-1);
+}
+
+*::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-shade-2);
+}

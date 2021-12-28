@@ -14,12 +14,12 @@ class Production {
      * @param {*} ignore 
      * @param {*} info 
      */
-    constructor(pattern, type, ignore, info = undefined) {
+    constructor(pattern, type, ignore, info = {}) {
         this.pattern = pattern;
         this.pattern.flags.replace('g', ''); // no global regex allowed
         this.type = type;
         this.ignore = ignore;
-        this.info = info ? info : {};
+        this.info = info;
     }
     /**
      * tests whether a string matches this production
@@ -66,10 +66,10 @@ class LexicalAnalyzer {
         this.symbolTable = symbolTable;
 
     }
-    putSymbol(charSequence, production, info) {
+    putSymbol(charSequence, production) {
         if (this.symbolTable[charSequence])
             return this.symbolTable[charSequence]; // if already exists then return
-        this.symbolTable[charSequence] = new SymbolTableRecord(charSequence, production, info);
+        this.symbolTable[charSequence] = new SymbolTableRecord(charSequence, production);
         return this.symbolTable[charSequence];
     }
     nextToken() {
@@ -77,6 +77,7 @@ class LexicalAnalyzer {
          * @algorithm
          *   Longest Match Rule
          */
+        if(this.index >= this.source.length) return undefined;
         let occurrenceIndex = this.index;
         // evaluation
         let candidate, candidateLength = 0;
@@ -88,7 +89,7 @@ class LexicalAnalyzer {
             }
         });
         if (candidate === undefined) { // no candidate
-            throw { msg: "Unrecognized symbol", symbol: this.source[this.index], occurrenceIndex: occurrenceIndex };
+            throw { msg: `Unrecognized symbol (${this.source[this.index]})`, symbol: this.source[this.index], occurrenceIndex: occurrenceIndex };
         } else if (candidate.production.ignore) { // this is ignored production, try again
             this.index += candidateLength; // move index
             return this.nextToken();

@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Braces, ExclamationCircle, Table } from "react-bootstrap-icons";
-import "./InfoSection.css";
+import "./InfoPanel.css";
 class NavigationBar extends React.Component {
 
     constructor(props) {
