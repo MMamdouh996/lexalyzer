@@ -70,7 +70,7 @@ class App extends React.Component {
             e.row = row;
             e.column = column;
         });
-        this.setState({ errors: errors, tokens: tokens, symbolTable: lexicalAnalyzer.symbolTable })
+        this.setState({ errors: errors, tokens: tokens, symbolTable: lexicalAnalyzer.symbolTable });
 
     }
 

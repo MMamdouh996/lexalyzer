@@ -91,7 +91,8 @@ class LexicalAnalyzer {
         });
         if (candidate === undefined) { // no candidate
             throw { msg: `Unrecognized symbol (${this.source[this.index]})`, symbol: this.source[this.index], occurrenceIndex: occurrenceIndex };
-        } else if (candidate.production.ignore) { // this is ignored production, try again
+        } 
+        else if (candidate.production.ignore) { // this is ignored production, try again
             this.index += candidateLength; // move index
             return this.nextToken();
         }
