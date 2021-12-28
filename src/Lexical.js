@@ -81,7 +81,8 @@ class LexicalAnalyzer {
         let occurrenceIndex = this.index;
         // evaluation
         let candidate, candidateLength = 0;
-        const evaluation = this.productions.map(p => { return { production: p, match: p.matches(this.source.substring(this.index)) } }); // map every production to the length of its match
+        const segment = this.source.substring(this.index);
+        const evaluation = this.productions.map(p => { return { production: p, match: p.matches(segment) } }); // map every production to the length of its match
         evaluation.forEach((c) => { // linear search best candidate production
             if (c.match?.length > candidateLength) {
                 candidateLength = c.match.length;
