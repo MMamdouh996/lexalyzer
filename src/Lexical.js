@@ -33,9 +33,6 @@ class Production {
         return undefined;
     }
 
-    createToken(lexeme, symbolTable) {
-        return new Token(this.type, symbolTable[lexeme]);
-    }
 }
 
 class SymbolTableRecord {
