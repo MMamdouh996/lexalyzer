@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: lexalyzer
-        image: docker.io/mohamed7khalifa/lexalyzer:v1.1 
+        image: mohamedmamdouhivlexalyzer:v1.1 
         ports:
         - containerPort: 80
