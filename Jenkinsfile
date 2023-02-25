@@ -19,8 +19,8 @@ pipeline {
                 git 'https://github.com/MMamdouh996/lexalyzer'
                 withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh """
-                kubectl apply -f /var/jenkins_home/workspace/lexalyzer/app/app.yaml
-                kubectl apply -f /var/jenkins_home/workspace/lexalyzer/app/service-app.yaml
+                kubectl apply -f /var/jenkins_home/workspace/test/app/app.yaml
+                kubectl apply -f /var/jenkins_home/workspace/test/app/service-app.yaml
                 """
                 }
             }
