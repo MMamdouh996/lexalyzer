@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: lexalyzer
-  namespace: app-ns
+  namespace: jen-ns
   labels:
     app: lexalyzer
 spec:
