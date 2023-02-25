@@ -9,7 +9,7 @@ pipeline {
                 sh """
                 docker login -u ${USERNAME} -p ${PASSWORD}
                 docker build . -t mohamed7khalifa/lexalyzer:v1.1 --network host
-                docker push mohamed7khalifa/lexalyzer:v1.1
+                docker push mohamedmamdouhiv/lexalyzer:v1.1
                 """
                 }
             }
